@@ -11,7 +11,7 @@
 package sys
 
 /*
-#cgo CFLAGS: -I${SRCDIR}/../../../include
+#cgo CFLAGS: -I${SRCDIR}/include
 #include <stdlib.h>
 #include <nwep.h>
 */
