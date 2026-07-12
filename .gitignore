@@ -1,0 +1,6 @@
+# cross-build outputs and test binaries (the published libs live elsewhere)
+*.test
+*.test.bin
+/coverage.out
+/checklib
+/checklib.exe
