@@ -4,23 +4,23 @@
 // installer. the installer writes nwep.pc to {prefix}/lib/pkgconfig and pkg-config
 // resolves the right -L and -l flags automatically.
 //
-// linux — system installs (/usr/local) are found automatically. user installs
-// (~/.local) require PKG_CONFIG_PATH:
+// linux, system install (/usr/local) — found automatically, just build:
+//
+//	go build ./...
+//
+// linux, user install (~/.local) — set PKG_CONFIG_PATH first:
 //
 //	PKG_CONFIG_PATH=~/.local/lib/pkgconfig go build ./...
 //
-// windows — the installer writes nwep.pc to %NWEP_LIB_DIR%\pkgconfig but does
-// not update PKG_CONFIG_PATH, so set it before building (use the MSYS2/mingw64
-// shell where pkg-config is available):
+// windows — pkg-config in MSYS2/mingw64 does not reliably handle the
+// Windows-native paths the installer writes into nwep.pc. use nwep_custom_link
+// and point CGO_LDFLAGS at the lib dir the installer set in NWEP_LIB_DIR:
 //
-//	PKG_CONFIG_PATH="$NWEP_LIB_DIR/pkgconfig" go build ./...
+//	CGO_LDFLAGS="-L$NWEP_LIB_DIR" go build -tags nwep_custom_link ./...
 //
 // if you are building from the nwep source tree, use the nwep_dev tag instead:
 //
 //	go build -tags nwep_dev ./...
-//
-// for a cross build or a self-contained static link, use nwep_custom_link and
-// drive linking entirely through CGO_LDFLAGS.
 
 package sys
 
