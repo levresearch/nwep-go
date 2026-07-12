@@ -2,7 +2,7 @@
 
 package nwep
 
-import "nwep/sys"
+import "github.com/levresearch/nwep-go/sys"
 
 // SplitSecret splits secret into shares pieces, any threshold of which recombine it.
 //

@@ -5,7 +5,7 @@ package nwep
 import (
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // CacheStats is a snapshot of a cache's hit, miss, store, and eviction counters.

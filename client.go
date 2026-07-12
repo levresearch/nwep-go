@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // Method is a web/1 request method NW040400.

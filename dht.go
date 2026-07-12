@@ -8,7 +8,7 @@ package nwep
 import (
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // BootstrapEntry is a known node to seed the routing table, a node and address.

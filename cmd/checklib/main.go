@@ -66,7 +66,7 @@ func main() {
 }
 
 func pkgConfigResult() (libdir, flags string) {
-	out, err := exec.Command("pkg-config", "--variable=libdir", "nwep").Output()
+	out, err := exec.Command("pkg-config", "--variable=libdir", "github.com/levresearch/nwep-go").Output()
 	if err != nil {
 		return "", ""
 	}
@@ -74,7 +74,7 @@ func pkgConfigResult() (libdir, flags string) {
 	if libdir == "" {
 		return "", ""
 	}
-	flagsOut, err := exec.Command("pkg-config", "--libs", "nwep").Output()
+	flagsOut, err := exec.Command("pkg-config", "--libs", "github.com/levresearch/nwep-go").Output()
 	if err != nil {
 		return libdir, ""
 	}
@@ -110,14 +110,14 @@ func installerDefaultDirs() (system, user []string) {
 	case osWindows:
 		if lad := os.Getenv("LOCALAPPDATA"); lad != "" {
 			user = []string{
-				filepath.Join(lad, "Programs", "nwep", "lib"),
-				filepath.Join(lad, "Programs", "nwep", "bin"),
+				filepath.Join(lad, "Programs", "github.com/levresearch/nwep-go", "lib"),
+				filepath.Join(lad, "Programs", "github.com/levresearch/nwep-go", "bin"),
 			}
 		}
 		if pf := os.Getenv("ProgramFiles"); pf != "" {
 			system = []string{
-				filepath.Join(pf, "nwep", "lib"),
-				filepath.Join(pf, "nwep", "bin"),
+				filepath.Join(pf, "github.com/levresearch/nwep-go", "lib"),
+				filepath.Join(pf, "github.com/levresearch/nwep-go", "bin"),
 			}
 		}
 	}

@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // Handler answers one decoded request by writing into res NW060000.

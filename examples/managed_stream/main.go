@@ -14,7 +14,7 @@ import (
 	"sync"
 	"time"
 
-	"nwep"
+	"github.com/levresearch/nwep-go"
 )
 
 var body = bytes.Repeat([]byte("nwep-stream-"), 20000) // ~240 KB

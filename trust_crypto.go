@@ -5,7 +5,7 @@ package nwep
 import (
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // BLSKeygen generates a bls12-381 secret and public key pair (nwep_bls_keygen).

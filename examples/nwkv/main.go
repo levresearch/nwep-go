@@ -14,7 +14,7 @@ import (
 	"os/signal"
 	"sync"
 
-	"nwep"
+	"github.com/levresearch/nwep-go"
 )
 
 // store is a goroutine-safe map standing in for real storage.

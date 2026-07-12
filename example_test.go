@@ -3,7 +3,7 @@ package nwep_test
 import (
 	"fmt"
 
-	"nwep"
+	"github.com/levresearch/nwep-go"
 )
 
 // Example shows the five-minute hello-world, the managed on-ramp NWG0200.

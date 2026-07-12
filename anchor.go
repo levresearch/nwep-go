@@ -9,7 +9,7 @@ package nwep
 import (
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // AnchorNode is one member of the threshold anchor set co-signing checkpoints NW120500.

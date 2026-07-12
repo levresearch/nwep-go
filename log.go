@@ -8,7 +8,7 @@ package nwep
 import (
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // Log is an append-only merkle log of key-management entries NW120000.

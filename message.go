@@ -10,7 +10,7 @@ package nwep
 import (
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // Status is a WEB/1 response status token NW080000.

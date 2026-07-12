@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"log"
 
-	"nwep"
+	"github.com/levresearch/nwep-go"
 )
 
 func main() {

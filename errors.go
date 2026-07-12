@@ -7,7 +7,7 @@
 
 package nwep
 
-import "nwep/sys"
+import "github.com/levresearch/nwep-go/sys"
 
 // Family groups the error codes by NW130000 families.
 type Family int

@@ -12,7 +12,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // NodeID is the 32-byte sha-256 identity that names a node NW040200.

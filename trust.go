@@ -10,7 +10,7 @@ package nwep
 import (
 	"unsafe"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // TrustVersion returns the trust-layer version string (nwep_trust_version).

@@ -2,7 +2,7 @@
 
 package nwep
 
-import "nwep/sys"
+import "github.com/levresearch/nwep-go/sys"
 
 // URI is a parsed web/1 reference, the target node, an optional port, and a path.
 type URI struct {

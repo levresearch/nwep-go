@@ -2,7 +2,7 @@
 
 package nwep
 
-import "nwep/sys"
+import "github.com/levresearch/nwep-go/sys"
 
 // Version returns the libnwep version string, for example 0.1.0 (nwep_version).
 func Version() string { return sys.Version() }

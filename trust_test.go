@@ -3,7 +3,7 @@ package nwep
 import (
 	"testing"
 
-	"nwep/sys"
+	"github.com/levresearch/nwep-go/sys"
 )
 
 // sysKeypairPriv reaches the private key through the sys escape hatch, for the

@@ -2,7 +2,7 @@
 
 package nwep
 
-import "nwep/sys"
+import "github.com/levresearch/nwep-go/sys"
 
 // Address is an ipv6 udp socket address a server binds or a client dials.
 //

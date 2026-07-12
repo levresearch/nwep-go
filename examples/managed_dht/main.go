@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"log"
 
-	"nwep"
+	"github.com/levresearch/nwep-go"
 )
 
 const portA, portB = 29441, 29442
