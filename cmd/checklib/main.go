@@ -3,7 +3,7 @@
 //
 // Usage:
 //
-//	go run nwep/cmd/checklib
+//	go run github.com/levresearch/nwep-go/cmd/checklib
 package main
 
 import (
@@ -39,10 +39,10 @@ func main() {
 			fmt.Println()
 			if strings.Contains(dir, ".local") {
 				// user install needs PKG_CONFIG_PATH set explicitly.
-				fmt.Printf("build with:\n\n  PKG_CONFIG_PATH=%s/pkgconfig \\\n  go build -tags nwep_pkgconfig ./...\n\n",
+				fmt.Printf("build with:\n\n  PKG_CONFIG_PATH=%s/pkgconfig \\\n  go build ./...\n\n",
 					dir)
 			} else {
-				fmt.Printf("build with:\n\n  go build -tags nwep_pkgconfig ./...\n\n")
+				fmt.Printf("build with:\n\n  go build ./...\n\n")
 			}
 			_ = flags
 			return
@@ -66,7 +66,7 @@ func main() {
 }
 
 func pkgConfigResult() (libdir, flags string) {
-	out, err := exec.Command("pkg-config", "--variable=libdir", "github.com/levresearch/nwep-go").Output()
+	out, err := exec.Command("pkg-config", "--variable=libdir", "nwep").Output()
 	if err != nil {
 		return "", ""
 	}
@@ -74,7 +74,7 @@ func pkgConfigResult() (libdir, flags string) {
 	if libdir == "" {
 		return "", ""
 	}
-	flagsOut, err := exec.Command("pkg-config", "--libs", "github.com/levresearch/nwep-go").Output()
+	flagsOut, err := exec.Command("pkg-config", "--libs", "nwep").Output()
 	if err != nil {
 		return libdir, ""
 	}
@@ -110,14 +110,14 @@ func installerDefaultDirs() (system, user []string) {
 	case osWindows:
 		if lad := os.Getenv("LOCALAPPDATA"); lad != "" {
 			user = []string{
-				filepath.Join(lad, "Programs", "github.com/levresearch/nwep-go", "lib"),
-				filepath.Join(lad, "Programs", "github.com/levresearch/nwep-go", "bin"),
+				filepath.Join(lad, "Programs", "nwep", "lib"),
+				filepath.Join(lad, "Programs", "nwep", "bin"),
 			}
 		}
 		if pf := os.Getenv("ProgramFiles"); pf != "" {
 			system = []string{
-				filepath.Join(pf, "github.com/levresearch/nwep-go", "lib"),
-				filepath.Join(pf, "github.com/levresearch/nwep-go", "bin"),
+				filepath.Join(pf, "nwep", "lib"),
+				filepath.Join(pf, "nwep", "bin"),
 			}
 		}
 	}
@@ -147,7 +147,7 @@ func printBuildCmd(libDir string) {
 func printNotFound(systemDirs, userDirs []string) {
 	fmt.Fprintln(os.Stderr, "checklib: nwep library not found.")
 	fmt.Fprintln(os.Stderr)
-	fmt.Fprintln(os.Stderr, "Install nwep with the GUI installer (https://rebuildtheinter.net/install),")
+	fmt.Fprintln(os.Stderr, "Install nwep with the GUI installer (http://pkg.rebuildtheinter.net/tools/latest/),")
 	fmt.Fprintln(os.Stderr, "or build it yourself with `zig build` in the nwep repo root.")
 	fmt.Fprintln(os.Stderr)
 	fmt.Fprintln(os.Stderr, "Expected install locations:")
@@ -162,7 +162,7 @@ func printNotFound(systemDirs, userDirs []string) {
 	if runtime.GOOS == osLinux {
 		fmt.Fprintln(os.Stderr)
 		fmt.Fprintln(os.Stderr, "For a user install, also try:")
-		fmt.Fprintln(os.Stderr, "  PKG_CONFIG_PATH=~/.local/lib/pkgconfig go run nwep/cmd/checklib")
+		fmt.Fprintln(os.Stderr, "  PKG_CONFIG_PATH=~/.local/lib/pkgconfig go run github.com/levresearch/nwep-go/cmd/checklib")
 	}
 	fmt.Fprintln(os.Stderr)
 	fmt.Fprintln(os.Stderr, "If the library is in a non-standard location, set NWEP_LIB_DIR.")
