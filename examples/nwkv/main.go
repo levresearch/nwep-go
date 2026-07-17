@@ -3,7 +3,7 @@
 // it serves READ /key and WRITE /key against an in-memory map, showing the managed
 // server on-ramp, a handler that branches on method, and the deferred-free common
 // path. run it, then point any web/1 client (or the nwcurl example) at the node_id
-// and port it prints. see bindings/guide.md for the layering.
+// and port it prints. the layering is NWG0200.
 
 package main
 
