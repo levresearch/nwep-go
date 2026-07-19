@@ -96,10 +96,7 @@ func newError(code int) *Error {
 	return &Error{Code: code, msg: sys.Strerror(code)}
 }
 
-// check turns a c return code into an error, nil for success (0 or positive).
-//
-// many calls return 0 for success, some return a non-negative result (a count, a
-// length, the defer sentinel), so only a negative code is an error.
+// check turns a c return code into an error, nil for success (0 or positive). only a negative code is an error.
 func check(rc int) error {
 	if rc >= 0 {
 		return nil
